@@ -1,0 +1,25 @@
+{
+  "name": "wiley2k12",
+  "version": "1.0.0",
+  "description": "Wiley Bot 2k12",
+  "main": "server/index.js",
+  "scripts": {
+    "start": "node server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lukehedger/wiley2k12.git"
+  },
+  "author": "Luke Hedger (https://www.level-out.com/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/lukehedger/wiley2k12/issues"
+  },
+  "homepage": "https://github.com/lukehedger/wiley2k12#readme",
+  "dependencies": {
+    "fs-extra": "^4.0.2",
+    "node-schedule": "^1.2.5",
+    "twit": "^2.2.9"
+  },
+  "devDependencies": {}
+}
