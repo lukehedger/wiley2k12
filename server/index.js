@@ -4,14 +4,21 @@ const schedule = require('node-schedule')
 const Twit = require('twit')
 const winston = require('winston')
 
-const config = require('./env')
+const fakeServer = require('./fakeServer')
 const nidforspid = require('./nidforspid')
 const randomArrayItem = require('./randomArrayItem')
 const randomNumber = require('./randomNumber')
 
-const twit = new Twit(config)
-
 const isDevelopment = process.env.NODE_ENV === 'development'
+
+const config = isDevelopment ? require('./env') : {
+  consumer_key: process.env.CONSUMER_KEY,
+  consumer_secret: process.env.CONSUMER_SECRET,
+  access_token: process.env.ACCESS_TOKEN,
+  access_token_secret: process.env.ACCESS_TOKEN_SECRET,
+}
+
+const twit = new Twit(config)
 
 const MAX_TWEETS = 4
 
@@ -25,7 +32,7 @@ const SCHEDULE = [
 winston.configure({
   transports: [
     new (winston.transports.Console)(),
-    new (winston.transports.File)({ filename: 'wiley2k12bot.log' }),
+    new (winston.transports.File)({ filename: '/tmp/wiley2k12bot.log' }),
   ]
 })
 

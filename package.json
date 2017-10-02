@@ -6,7 +6,8 @@
   "scripts": {
     "start": "per-env",
     "start:development": "NODE_ENV=development node server",
-    "start:production": "node server"
+    "start:production": "node server",
+    "deploy": "now -e NODE_ENV=production -e CONSUMER_KEY=@wiley-consumer-key -e CONSUMER_SECRET=@wiley-consumer-secret -e ACCESS_TOKEN=@wiley-access-token -e ACCESS_TOKEN_SECRET=@wiley-access-token-secret && now alias set `pbpaste` wiley2k12 && now scale wiley2k12.now.sh 1"
   },
   "repository": {
     "type": "git",
