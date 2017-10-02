@@ -23,10 +23,10 @@ const twit = new Twit(config)
 const MAX_TWEETS = 4
 
 const SCHEDULE = [
-  '0 15 8 * * *',
-  '0 4 12 * * *',
-  '0 57 16 * * *',
-  '0 23 21 * * *',
+  '0 14 7 * * *', // 8.15
+  '0 3 11 * * *', // 12.04
+  '0 56 15 * * *', // 16.57
+  '0 22 20 * * *', // 21.23
 ]
 
 winston.configure({
